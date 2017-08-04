@@ -1,4 +1,4 @@
-package cn.stt.rabbitmq.example1;
+package cn.stt.rabbitmq.example6;
 
 import com.rabbitmq.client.AMQP;
 import org.apache.commons.lang.SerializationUtils;
@@ -24,6 +24,7 @@ public class Producer extends EndPoint {
         AMQP.BasicProperties basicProperties = new AMQP.BasicProperties.Builder()
                 .expiration("10000")
                 .build();
-        channel.basicPublish("",endPointName, basicProperties, SerializationUtils.serialize(object));
+        // routingKey =delay_queue 进行转发
+        channel.basicPublish("","delay_queue", basicProperties, SerializationUtils.serialize(object));
     }
 }

@@ -1,4 +1,4 @@
-package cn.stt.rabbitmq.example1;
+package cn.stt.rabbitmq.example6;
 
 import org.junit.Test;
 
@@ -13,8 +13,10 @@ import java.util.concurrent.TimeoutException;
  */
 public class MainTest {
 
+    private static final String queneName = "tt1";
+
     public static void main(String[] args) throws IOException, TimeoutException {
-        QueueConsumer consumer = new QueueConsumer("queue6");
+        QueueConsumer consumer = new QueueConsumer(queneName);
         Thread consumerThread = new Thread(consumer);
         consumerThread.start();
 
@@ -22,9 +24,9 @@ public class MainTest {
 
     @Test
     public void test() throws IOException, TimeoutException {
-        Producer producer = new Producer("queue6");
+        Producer producer = new Producer(queneName);
         HashMap message = new HashMap();
-        message.put("message number","第6条信息");
+        message.put("message number", "第" + queneName + "条信息");
         producer.sendMessage(message);
 
         /*for (int i = 0; i < 100; i++) {

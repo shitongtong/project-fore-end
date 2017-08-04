@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.stt</groupId>
+    <artifactId>file-handle</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>iText</groupId>
+            <artifactId>iText</artifactId>
+            <version>2.0.8</version>
+            <scope>system</scope>
+            <systemPath>D:/lib/iText/iText-2.0.8.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>iTextAsianCmaps</groupId>
+            <artifactId>iTextAsianCmaps</artifactId>
+            <version>2.0.8</version>
+            <scope>system</scope>
+            <systemPath>D:/lib/iText/iTextAsianCmaps.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>iTextAsian</groupId>
+            <artifactId>iTextAsian</artifactId>
+            <version>2.0.8</version>
+            <scope>system</scope>
+            <systemPath>D:/lib/iText/iTextAsian.jar</systemPath>
+        </dependency>
+    </dependencies>
+
+</project>

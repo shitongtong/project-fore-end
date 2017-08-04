@@ -1,4 +1,4 @@
-package cn.stt.rabbitmq.example1;
+package cn.stt.rabbitmq.example6;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
@@ -40,17 +40,17 @@ public abstract class EndPoint {
         channel = connection.createChannel();
 
         Map<String,Object> arguments = new HashMap<>();
-//        arguments.put("x-dead-letter-exchange", "amq.direct");
-//        arguments.put("x-dead-letter-routing-key", "message_ttl_routingKey");
-        arguments.put("x-message-ttl", 10000);
+        arguments.put("x-dead-letter-exchange", "amq.direct");
+        arguments.put("x-dead-letter-routing-key", "message_ttl_routingKey");
+//        arguments.put("x-message-ttl", 10000);
 
         //declaring a queue for this channel. If queue does not exist,
         //it will be created on the server.
-        channel.queueDeclare(endPointName, true, false, false, arguments);
+        channel.queueDeclare("delay_queue", true, false, false, arguments);
         // 声明队列
-//        channel.queueDeclare(endPointName, true, false, false, null);
+        channel.queueDeclare(endPointName, true, false, false, null);
         // 绑定路由
-//        channel.queueBind(endPointName, "amq.direct", "message_ttl_routingKey");
+        channel.queueBind(endPointName, "amq.direct", "message_ttl_routingKey");
     }
 
 

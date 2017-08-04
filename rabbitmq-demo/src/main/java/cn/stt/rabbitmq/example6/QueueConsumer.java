@@ -1,4 +1,4 @@
-package cn.stt.rabbitmq.example1;
+package cn.stt.rabbitmq.example6;
 
 import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.Consumer;
