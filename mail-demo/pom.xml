@@ -5,31 +5,32 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.stt</groupId>
-    <artifactId>file-handle</artifactId>
+    <artifactId>mail-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
+
+        <!-- spring mail -->
         <dependency>
-            <groupId>iText</groupId>
-            <artifactId>iText</artifactId>
-            <version>2.0.8</version>
-            <scope>system</scope>
-            <systemPath>D:/lib/iText/iText-2.0.8.jar</systemPath>
+            <groupId>org.springframework.integration</groupId>
+            <artifactId>spring-integration-mail</artifactId>
+            <version>4.3.9.RELEASE</version>
         </dependency>
+
+        <!-- apachemail send mail -->
         <dependency>
-            <groupId>iTextAsianCmaps</groupId>
-            <artifactId>iTextAsianCmaps</artifactId>
-            <version>2.0.8</version>
-            <scope>system</scope>
-            <systemPath>D:/lib/iText/iTextAsianCmaps.jar</systemPath>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-email</artifactId>
+            <version>1.5</version>
         </dependency>
+
+        <!-- javaxmail send mail -->
         <dependency>
-            <groupId>iTextAsian</groupId>
-            <artifactId>iTextAsian</artifactId>
-            <version>2.0.8</version>
-            <scope>system</scope>
-            <systemPath>D:/lib/iText/iTextAsian.jar</systemPath>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.7</version>
         </dependency>
+
     </dependencies>
 
     <build>
