@@ -10,6 +10,7 @@ import java.io.File;
 import java.util.Properties;
 
 import static cn.stt.mail.util.MailConfig.attachmentLocalPath;
+import static cn.stt.mail.util.MailConfig.iamgeLocalPath;
 import static cn.stt.mail.util.MailConfig.myEmailAccount;
 import static cn.stt.mail.util.MailConfig.myEmailPassword;
 import static cn.stt.mail.util.MailConfig.myEmailSMTPHost;
@@ -43,14 +44,26 @@ public class SendAttached {
         // 设置收件人，寄件人
         messageHelper.setTo(receiveMailAccount);
         messageHelper.setFrom(myEmailAccount);
-        messageHelper.setSubject("测试邮件中上传附件!！");
+        messageHelper.setSubject("测试邮件中图片和上传附件!！");
+        StringBuilder sb = new StringBuilder();
+        sb.append("<html><head></head><body><h1>你好：附件中有学习资料！图片：</h1>");
+        sb.append("<img src='cid:aaa'/>");
+        sb.append("</body></html>");
         // true 表示启动HTML格式的邮件
-        messageHelper.setText(
-                "<html><head></head><body><h1>你好：附件中有学习资料！</h1></body></html>",
-                true);
+        /*messageHelper.setText(
+                "<html><head></head><body><h1>hello!!spring image html mail</h1>"
+                        + "<img src=\"cid:aaa\"/></body></html>", true);*/
+        messageHelper.setText(sb.toString(), true);
 
-        FileSystemResource file = new FileSystemResource(
-                new File(attachmentLocalPath));
+        FileSystemResource img = new FileSystemResource(new File(iamgeLocalPath));
+        messageHelper.addInline("aaa", img);
+
+        // true 表示启动HTML格式的邮件
+        /*messageHelper.setText(
+                "<html><head></head><body><h1>你好：附件中有学习资料！</h1></body></html>",
+                true);*/
+
+        FileSystemResource file = new FileSystemResource(new File(attachmentLocalPath));
         // 这里的方法调用和插入图片是不同的。
         messageHelper.addAttachment("文档.doc", file);
 

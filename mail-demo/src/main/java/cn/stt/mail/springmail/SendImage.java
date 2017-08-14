@@ -19,6 +19,7 @@ import static cn.stt.mail.util.MailConfig.receiveMailAccount;
  * 发送嵌套图片的邮件
  * Email允许添加附件，也允许在multipart信件中内嵌资源。内嵌资源可能是你在信件中希望使用的图像，或者样式表，
  * 但是又不想把它们作为附件。
+ *
  * @Author shitongtong
  * <p>
  * Created by shitongtong on 2017/8/11.
@@ -45,10 +46,15 @@ public class SendImage {
         messageHelper.setTo(receiveMailAccount);
         messageHelper.setFrom(myEmailAccount);
         messageHelper.setSubject("测试邮件中嵌套图片!！");
+        StringBuilder sb = new StringBuilder();
+        sb.append("<html><head></head><body><h1>hello!!spring image html mail</h1>");
+        sb.append("<img src='cid:aaa'/>");
+        sb.append("</body></html>");
         // true 表示启动HTML格式的邮件
-        messageHelper.setText(
+        /*messageHelper.setText(
                 "<html><head></head><body><h1>hello!!spring image html mail</h1>"
-                        + "<img src=\"cid:aaa\"/></body></html>", true);
+                        + "<img src=\"cid:aaa\"/></body></html>", true);*/
+        messageHelper.setText(sb.toString(), true);
 
         FileSystemResource img = new FileSystemResource(new File(iamgeLocalPath));
 

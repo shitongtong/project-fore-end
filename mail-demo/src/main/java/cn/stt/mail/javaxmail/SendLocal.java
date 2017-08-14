@@ -28,10 +28,10 @@ public class SendLocal {
         // 2. From: 发件人
         //    其中 InternetAddress 的三个参数分别为: 邮箱, 显示的昵称(只用于显示, 没有特别的要求), 昵称的字符集编码
         //    真正要发送时, 邮箱必须是真实有效的邮箱。
-        message.setFrom(new InternetAddress("tong_tong_0909@163.com", "stt", "UTF-8"));
+        message.setFrom(new InternetAddress("xxxxxxxxx@163.com", "stt", "UTF-8"));
 
         // 3. To: 收件人
-        message.setRecipient(MimeMessage.RecipientType.TO, new InternetAddress("767035687@qq.com", "qq", "UTF-8"));
+        message.setRecipient(MimeMessage.RecipientType.TO, new InternetAddress("xxxxxxxxxx@qq.com", "qq", "UTF-8"));
         /*//    To: 增加收件人（可选）
         message.addRecipient(MimeMessage.RecipientType.TO, new InternetAddress("dd@receive.com", "USER_DD", "UTF-8"));
         //    Cc: 抄送（可选）

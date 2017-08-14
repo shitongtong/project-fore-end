@@ -25,7 +25,7 @@ import java.util.Properties;
  */
 public class SendComplex {
     // 发件人的 邮箱 和 密码（替换为自己的邮箱和密码）
-    public static String myEmailAccount = MailConfig.myEmailAccount;//767035687@qq.com
+    public static String myEmailAccount = MailConfig.myEmailAccount;
     public static String myEmailPassword = MailConfig.myEmailPassword;
 
     // 发件人邮箱的 SMTP 服务器地址, 必须准确, 不同邮件服务器地址不同, 一般格式为: smtp.xxx.com
@@ -34,7 +34,7 @@ public class SendComplex {
     public static String myEmailSMTPHost = MailConfig.myEmailSMTPHost;
 
     // 收件人邮箱（替换为自己知道的有效邮箱）
-    public static String receiveMailAccount = MailConfig.receiveMailAccount;//tong_tong_0909@163.com
+    public static String receiveMailAccount = MailConfig.receiveMailAccount;
 
     public static void main(String[] args) throws Exception {
         // 1. 创建参数配置, 用于连接邮件服务器的参数配置

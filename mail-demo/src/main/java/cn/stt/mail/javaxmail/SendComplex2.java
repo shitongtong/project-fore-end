@@ -22,7 +22,7 @@
 // */
 //public class SendComplex2 {
 //    // 发件人的 邮箱 和 密码（替换为自己的邮箱和密码）
-//    public static String myEmailAccount = "767035687@qq.com";//767035687@qq.com
+//    public static String myEmailAccount = "xxxxxxx@qq.com";
 //    public static String myEmailPassword = "xxxxxx";
 //
 //    // 发件人邮箱的 SMTP 服务器地址, 必须准确, 不同邮件服务器地址不同, 一般格式为: smtp.xxx.com
@@ -30,7 +30,7 @@
 //    public static String myEmailSMTPHost = "smtp.qq.com";
 //
 //    // 收件人邮箱（替换为自己知道的有效邮箱）
-//    public static String receiveMailAccount = "tong_tong_0909@163.com";//tong_tong_0909@163.com
+//    public static String receiveMailAccount = "xxxxxxxxx@163.com";
 //
 //    public static void main(String[] args) throws Exception {
 //        // 1. 创建参数配置, 用于连接邮件服务器的参数配置
